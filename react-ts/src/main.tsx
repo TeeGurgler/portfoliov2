@@ -37,7 +37,7 @@ createRoot(document.getElementById("root")!).render(
       >
         <Particles
           className="pointer-events-none absolute inset-0 z-0 h-full w-full"
-          quantity={160}
+          quantity={600}
           ease={80}
           color="#000000"
           size={0.6}
