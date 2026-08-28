@@ -71,13 +71,33 @@ export function Particles({
     }
     initCanvas();
     animate();
-    window.addEventListener("resize", initCanvas);
+
+    const handleResize = () => {
+      initCanvas();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (rafID.current != null) {
+          cancelAnimationFrame(rafID.current);
+          rafID.current = null;
+        }
+      } else {
+        if (rafID.current == null) {
+          animate();
+        }
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       if (rafID.current != null) {
         cancelAnimationFrame(rafID.current);
       }
-      window.removeEventListener("resize", initCanvas);
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [color]);
 

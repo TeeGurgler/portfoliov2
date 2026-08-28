@@ -2,7 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Briefcase, MapPin, Sparkles, CheckCircle } from "lucide-react";
+import {
+  GraduationCap,
+  Briefcase,
+  MapPin,
+  CheckCircle,
+  Hammer,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { TIMELINE_ITEMS } from "@/data/portfolio";
@@ -22,14 +28,15 @@ export function Timeline() {
           className="mb-14 text-center md:mb-20"
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/60 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
+            <Hammer className="h-3.5 w-3.5 text-primary" />
             <span>Academic & Professional Path</span>
           </div>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
             Experience & Education
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
-            A unique profile bridging rigorous Data Science engineering with commercial economics and structured legal operations.
+            A unique profile bridging rigorous Data Science engineering with
+            commercial economics and structured legal operations.
           </p>
         </motion.div>
 
@@ -47,7 +54,8 @@ export function Timeline() {
           <div className="space-y-12 md:space-y-16">
             {TIMELINE_ITEMS.map((item, index) => {
               const isEven = index % 2 === 0;
-              const Icon = item.type === "education" ? GraduationCap : Briefcase;
+              const Icon =
+                item.type === "education" ? GraduationCap : Briefcase;
 
               return (
                 <motion.div
@@ -152,4 +160,3 @@ export function Timeline() {
     </section>
   );
 }
-
