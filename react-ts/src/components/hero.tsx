@@ -22,14 +22,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="transform-gpu will-change-[transform,opacity]"
         >
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="mb-6 inline-block"
+            className="mb-6 inline-block transform-gpu will-change-transform"
           >
-            <div className="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-black/10 bg-gradient-to-b from-neutral-900 via-neutral-700 to-neutral-500 p-0.5 shadow-2xl shadow-neutral-950/20">
+            <div className="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-black/10 bg-gradient-to-b from-neutral-900 via-neutral-700 to-neutral-500 p-0.5 shadow-xl shadow-neutral-950/15">
               <div className="flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-neutral-800 to-neutral-950 text-xl font-bold tracking-wider text-white">
                 AJ
               </div>
@@ -46,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-muted-foreground md:text-2xl"
+            className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-muted-foreground md:text-2xl transform-gpu will-change-[transform,opacity]"
           >
             I focus on database architectures, modern web development, data
             analysis, and process automation. Delivering scalable,
@@ -57,7 +58,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mb-12 flex flex-wrap justify-center gap-4"
+            className="mb-12 flex flex-wrap justify-center gap-4 transform-gpu will-change-[transform,opacity]"
           >
             <Button
               size="lg"
@@ -91,7 +92,7 @@ export function Hero() {
           opacity: { delay: 1, duration: 0.6 },
           y: { delay: 1.5, duration: 1.5, repeat: Infinity },
         }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 transform text-sm text-muted-foreground z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 transform-gpu will-change-[transform,opacity] text-sm text-muted-foreground z-10"
       >
         ↓
       </motion.div>

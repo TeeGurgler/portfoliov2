@@ -103,8 +103,9 @@ export function Timeline() {
                     <motion.div
                       whileHover={{ scale: 1.015, y: -4 }}
                       transition={{ duration: 0.2 }}
+                      className="transform-gpu will-change-[transform]"
                     >
-                      <Card className="group relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-xl hover:shadow-neutral-900/5 md:p-7">
+                      <Card className="group relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-lg hover:shadow-neutral-900/5 md:p-7 transform-gpu">
                         <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-neutral-900 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                         <div className="relative z-10 space-y-3">

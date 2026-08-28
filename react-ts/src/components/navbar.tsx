@@ -42,8 +42,8 @@ export function Navbar() {
           initial={{ y: -60, opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: -60, opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 rounded-full border border-black/10 dark:border-white/10 bg-background/80 px-3 py-1.5 backdrop-blur-md shadow-md"
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 rounded-full border border-black/10 dark:border-white/10 bg-background/85 px-3 py-1.5 backdrop-blur-sm shadow-md transform-gpu will-change-[transform,opacity]"
         >
           {/* Home button on left side */}
           <a

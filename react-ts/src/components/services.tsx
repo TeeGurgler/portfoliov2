@@ -53,13 +53,14 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{
-                delay: index * 0.1,
-                duration: 0.5,
+                delay: index * 0.08,
+                duration: 0.45,
                 ease: "easeOut",
               }}
               whileHover={{ y: -6 }}
+              className="transform-gpu will-change-[transform,opacity]"
             >
-              <Card className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-xl hover:shadow-neutral-900/5 md:p-8">
+              <Card className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-lg hover:shadow-neutral-900/5 md:p-8 transform-gpu">
                 {/* Monochromatic gradient glow on hover */}
                 <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-neutral-900/[0.06] via-transparent to-neutral-400/[0.04] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-neutral-900 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
