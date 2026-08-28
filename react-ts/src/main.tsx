@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { MeshGradient } from "@paper-design/shaders-react";
+import { Particles } from "@/components/ui/particles";
 
 import { Hero } from "./components/hero";
 import { Hero2 } from "./components/hero2";
@@ -10,9 +11,8 @@ import { Timeline } from "./components/timeline";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* Wichtig: KEIN bg-background hier auf dem Root-Div */}
     <div className="relative min-h-screen w-full text-foreground">
-      {/*  Globaler Shader im Hintergrund */}
+      {/* Globaler Shader ganz hinten */}
       <div className="pointer-events-none fixed inset-0 -z-50 h-screen w-screen overflow-hidden">
         <MeshGradient
           colors={["#000000", "#3f3f3f", "#6b6b6b", "#a3a3a3", "#ffffff"]}
@@ -22,11 +22,27 @@ createRoot(document.getElementById("root")!).render(
         />
       </div>
 
-      {/* Sektionen */}
+      {/* Hero Sektion mit Fade */}
       <Hero />
-      <Services />
-      <Timeline />
-      <Hero2 />
+
+      {/* Gesamter Bereich unter Hero mit durchgehenden Partikeln */}
+      <div
+        className="relative z-10 w-full overflow-hidden"
+        style={{ backgroundColor: "#ffffff" }}
+      >
+        <Particles
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full"
+          quantity={800}
+          ease={80}
+          color="#000000"
+          size={0.6}
+        />
+        <div className="relative z-10">
+          <Services />
+          <Timeline />
+          <Hero2 />
+        </div>
+      </div>
     </div>
   </StrictMode>,
 );

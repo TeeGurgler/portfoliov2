@@ -49,7 +49,7 @@ export function Timeline() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section ref={ref} className="w-full bg-background px-4 py-16 md:py-24">
+    <section ref={ref} className="w-full px-4 py-16 md:py-24">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

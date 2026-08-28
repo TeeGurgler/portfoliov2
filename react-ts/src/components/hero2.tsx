@@ -82,7 +82,7 @@ const itemVariants: Variants = {
 
 export function Hero2() {
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 py-24 lg:py-32">
+    <section className="relative w-full min-h-screen overflow-hidden px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

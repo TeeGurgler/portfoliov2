@@ -7,13 +7,17 @@ export function Hero() {
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
       {/* 
-        DAS FADE-OVERLAY:
-        Oben: transparent (Shader scheint 100% durch)
-        Unten: fadet direkt in deine Hintergrundfarbe
+        Smooth vertical gradient transition into the app background
       */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.85) 75%, #ffffff 100%)",
+        }}
+      />
 
-      {/* Inhalt mit z-10, damit er über dem Fade liegt */}
+      {/* Hero content container staying above fade overlay */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
