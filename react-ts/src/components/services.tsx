@@ -1,162 +1,125 @@
-"use client";
-
 import { motion } from "framer-motion";
 import {
+  FolderGit2,
+  ExternalLink,
+  Hammer,
+  Activity,
+  Ship,
   Code2,
-  Database,
-  LineChart,
-  Workflow,
-  Sparkles,
-  ArrowRight,
+  BarChart3,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { PROJECTS } from "@/data/portfolio";
 
-const services = [
-  {
-    icon: Code2,
-    title: "Web Development",
-    description:
-      "Modern, responsive single-page websites and web tools built with React and Tailwind CSS. Clean, fast, and structured for real business conversions.",
-    features: [
-      "React & Tailwind UI",
-      "Mobile-First Responsive Design",
-      "Conversion-Driven Layouts",
-    ],
-    iconColor: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-  {
-    icon: Database,
-    title: "Database Integration",
-    description:
-      "Structured data backends using PostgreSQL and SQL. Organizing, connecting, and managing application data securely for business needs.",
-    features: [
-      "Relational Schema Design",
-      "REST API Data Fetching",
-      "PostgreSQL / Managed DBs",
-    ],
-    iconColor: "text-emerald-500",
-    bgColor: "bg-emerald-500/10",
-  },
-  {
-    icon: LineChart,
-    title: "Data Preparation & Insights",
-    description:
-      "Turning messy operational spreadsheets into clean, structured data models ready for business analysis and reporting.",
-    features: [
-      "Data Cleaning (Python/SQL)",
-      "Automated Exports",
-      "Process KPI Structuring",
-    ],
-    iconColor: "text-indigo-500",
-    bgColor: "bg-indigo-500/10",
-  },
-  {
-    icon: Workflow,
-    title: "Process Automation",
-    description:
-      "Connecting web forms, external APIs, and business tools to eliminate manual work and streamline incoming client inquiries.",
-    features: [
-      "Form Endpoints (Formspree)",
-      "API Integrations",
-      "Workflow Streamlining",
-    ],
-    iconColor: "text-amber-500",
-    bgColor: "bg-amber-500/10",
-  },
-];
+const PROJECT_ICONS: Record<string, React.ReactNode> = {
+  "Tennis 3D Tracking & Analysis": <Activity className="h-5 w-5 text-white" />,
+  "Container Route Tracking": <Ship className="h-5 w-5 text-white" />,
+  "My Portfolio": <Code2 className="h-5 w-5 text-white" />,
+  "Demographic Data Analysis": <BarChart3 className="h-5 w-5 text-white" />,
+};
 
 export function Services() {
   return (
-    <section className="w-full px-4 py-16 md:py-24">
+    <section id="projects" className="w-full px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 text-center md:mb-16"
-        >
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/50 px-3 py-1 text-xs text-muted-foreground">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span>Practical Solutions for Growing Businesses</span>
-          </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Core Services
-          </h2>
-          <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
-            Bridging technical development, database structuring, and commercial
-            understanding to solve real business challenges.
-          </p>
-        </motion.div>
-
-        {/* 2x2 Grid */}
-        <div className="grid gap-6 sm:grid-cols-2">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ y: -4 }}
-              >
-                <Card className="group relative h-full overflow-hidden border-border/50 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
-                  <div
-                    className={`absolute inset-0 ${service.bgColor} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
-                  />
-
-                  <div className="relative z-10 flex h-full flex-col justify-between">
-                    <div>
-                      <div
-                        className={`mb-4 w-fit rounded-xl ${service.bgColor} p-3`}
-                      >
-                        <Icon className={`h-6 w-6 ${service.iconColor}`} />
-                      </div>
-
-                      <h3 className="mb-2 text-xl font-semibold">
-                        {service.title}
-                      </h3>
-                      <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    <ul className="space-y-2 border-t border-border/40 pt-4">
-                      {service.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-center gap-2 text-xs text-muted-foreground"
-                        >
-                          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Action Call */}
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-12 text-center md:mt-16"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mb-14 text-center md:mb-20"
         >
-          <p className="mb-4 text-sm text-muted-foreground md:text-base">
-            Need a reliable website or technical implementation for your
-            business?
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/60 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-xs">
+            <Hammer className="h-3.5 w-3.5 text-neutral-900" />
+            <span>Featured Technical Work</span>
+          </div>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            Projects & Solutions
+          </h2>
+          <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
+            A selection of machine learning architectures, spatial computer
+            vision algorithms, and full-stack software systems.
           </p>
-          <Button size="lg" className="gap-2">
-            Let's Talk <ArrowRight className="h-4 w-4" />
-          </Button>
         </motion.div>
+
+        {/* Projects 2x2 Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+          {PROJECTS.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+                ease: "easeOut",
+              }}
+              whileHover={{ y: -6 }}
+            >
+              <Card className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-xl hover:shadow-neutral-900/5 md:p-8">
+                {/* Monochromatic gradient glow on hover */}
+                <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-neutral-900/[0.06] via-transparent to-neutral-400/[0.04] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-neutral-900 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="relative z-10">
+                  <div className="mb-5 flex items-center">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-900 shadow-md transition-transform duration-300 group-hover:scale-105">
+                      {PROJECT_ICONS[project.title] || (
+                        <FolderGit2 className="h-5 w-5 text-white" />
+                      )}
+                    </div>
+                  </div>
+
+                  <h3 className="mb-3 text-xl font-bold tracking-tight text-neutral-900 transition-colors group-hover:text-black">
+                    {project.title}
+                  </h3>
+
+                  <p className="mb-6 text-sm leading-relaxed text-neutral-600">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="relative z-10">
+                  {/* Tech stack tags */}
+                  <div className="mb-6 flex flex-wrap gap-1.5 border-t border-neutral-100 pt-4">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="rounded-md border border-neutral-200/60 bg-neutral-100/80 px-2.5 py-0.5 text-[0.7rem] font-medium text-neutral-700 transition-colors group-hover:border-neutral-300 group-hover:bg-neutral-100"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  {/* GitHub Action link */}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-neutral-900 bg-neutral-900 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-neutral-800 hover:shadow-md"
+                  >
+                    <span>View Repository</span>
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Global GitHub CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-14 text-center md:mt-20"
+        ></motion.div>
       </div>
     </section>
   );

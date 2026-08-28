@@ -4,14 +4,19 @@ import "./index.css";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { Particles } from "@/components/ui/particles";
 
+import { Navbar } from "./components/navbar";
 import { Hero } from "./components/hero";
-import { Hero2 } from "./components/hero2";
 import { Services } from "./components/services";
+import { Skills } from "./components/skills";
 import { Timeline } from "./components/timeline";
+import { Footer } from "./components/footer";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <div className="relative min-h-screen w-full text-foreground">
+      {/* Floating Pill Navbar */}
+      <Navbar />
+
       {/* Globaler Shader ganz hinten */}
       <div className="pointer-events-none fixed inset-0 -z-50 h-screen w-screen overflow-hidden">
         <MeshGradient
@@ -32,15 +37,16 @@ createRoot(document.getElementById("root")!).render(
       >
         <Particles
           className="pointer-events-none absolute inset-0 z-0 h-full w-full"
-          quantity={800}
+          quantity={160}
           ease={80}
           color="#000000"
           size={0.6}
         />
         <div className="relative z-10">
           <Services />
+          <Skills />
           <Timeline />
-          <Hero2 />
+          <Footer />
         </div>
       </div>
     </div>
