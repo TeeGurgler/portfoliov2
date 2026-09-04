@@ -29,15 +29,39 @@ export interface TimelineItem {
 
 export const PROJECTS: Project[] = [
   {
+    title: "Brain Health Predictive Modeling",
+    description:
+      "Collaborative biomedical machine learning challenge analyzing neurological health metrics. Implemented and validated Random Forest classification pipelines to predict clinical outcomes from health indicator datasets.",
+    tags: ["Machine Learning", "Random Forest", "Random Survival Forest", "Python", "Jupyter", "Scikit-Learn"],
+    githubUrl: "https://github.com/TeeGurgler/brain-health-challenge",
+    featured: true,
+  },
+  {
+    title: "Rhine Swimability Monte Carlo Simulation",
+    description:
+      "Probabilistic data model to determine swimable summer days in the Basel Rhine based on 23 years of sensor data. Implements bivariate normal distributions via Cholesky decomposition, MLE parameter estimation, and a Monte Carlo engine with 10,000 runs.",
+    tags: [
+      "Python",
+      "Monte Carlo",
+      "Statistical Modeling",
+      "NumPy",
+      "SciPy",
+      "Pandas",
+    ],
+    githubUrl: "https://github.com/TeeGurgler/omc-rhine-swimability",
+    featured: true,
+  },
+  {
     title: "Tennis 3D Tracking & Analysis",
     description:
       "Advanced computer vision pipeline for real-time 3D ball & player tracking using stereo vision. Computes trajectory curves, court bounces, and velocity metrics with interactive visualization dashboards.",
     tags: [
+      "Python",
       "Computer Vision",
       "Stereo Camera",
       "ZED SDK",
       "Streamlit",
-      "Python",
+
     ],
     githubUrl: "https://github.com/TeeGurgler/CDA2-3Da",
     featured: true,
@@ -48,7 +72,7 @@ export const PROJECTS: Project[] = [
       "Simple fleet analytics tool processing shipping logistics data. Visualizes container routes and plots monitored environmental conditions on interactive maps with geospatial overlays.",
     tags: ["Python", "Pandas", "Matplotlib", "Geospatial"],
     githubUrl: "https://github.com/NotSchebs/Cde1-1Da_Challenge_FHNW",
-    featured: true,
+    featured: false,
   },
   {
     title: "Demographic Data Analysis",
@@ -56,13 +80,13 @@ export const PROJECTS: Project[] = [
       "Statistical modeling and demographic projection framework analyzing regional population shifts, economic factors, and generational trends using statistics.",
     tags: ["R", "Statistical Modeling", "Data Visualization", "ggplot2"],
     githubUrl: "https://github.com/TeeGurgler/CDE1-Demografie",
-    featured: true,
+    featured: false,
   },
   {
     title: "My Portfolio",
     description:
-      "Performative Web-App with shaders, animated overlays and interactive components. Built with React, TypeScript, Tailwind CSS, and Vite for fast development and optimized production builds.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Shaders"],
+      "Web-App with shaders, animated overlays and interactive components. Built with React, TypeScript, Tailwind CSS, and Vite for fast development and optimized production builds.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/TeeGurgler/portfoliov2",
     featured: true,
   },
@@ -172,39 +196,39 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   {
     period: "2024 – Present",
     title: "BSc Data Science",
-    institution: "FHNW Fachhochschule Nordwestschweiz",
+    institution: "FHNW University of Applied Sciences",
     location: "Brugg-Windisch, CH",
     description:
-      "Deepening expertise in Machine Learning, Statistical Analysis, Data Engineering pipelines, Linear Algebra, and Distributed Systems.",
+      "Hands-on studies focusing on statistical modeling, machine learning, and end-to-end data pipelines.",
     highlights: [
-      "Specialization in Computer Vision, Predictive Analytics, and Big Data Technologies",
-      "Practical project work in 3D sensor tracking, regression modeling, and full-stack integration",
+      "Built practical projects in 3D computer vision, stereo tracking, and Monte Carlo simulations",
+      "Core coursework in linear algebra, predictive modeling, and software engineering",
     ],
     type: "education",
   },
   {
     period: "2023 – 2024",
-    title: "Legal Assistant & Data Organisation",
-    institution: "Law Firm Internship",
+    title: "Legal & Operations Assistant",
+    institution: "Advokatur & Rechtsberatung TRIAS AG",
     location: "Basel, CH",
     description:
-      "Structured legal document workflows, accelerated research automation, and coordinated client case management with rigorous precision.",
+      "Supported case management, automated routine office workflows, and maintained internal digital document databases.",
     highlights: [
-      "Streamlined digital client filing systems and case documentation databases",
-      "Applied structured data techniques to extract insights from extensive legal texts",
+      "Migrated and structured physical case files into searchable digital records",
+      "Coordinated daily client correspondence and legal document prep under strict deadlines",
     ],
     type: "experience",
   },
   {
     period: "2020 – 2023",
-    title: "Commercial Education & Berufsmaturität (BM1)",
-    institution: "Economics & Law Focus",
+    title: "Commercial Apprenticeship & Federal Matura (BM1)",
+    institution: "Wirtschaftsschule",
     location: "Basel, CH",
     description:
-      "Dual business degree combining foundational economic principles, accounting, contract law, and commercial operations.",
+      "Dual education combining commercial practice with advanced coursework in business, accounting, and law.",
     highlights: [
-      "Solid business administration and commercial acumen complementing technical engineering",
-      "Graduated with federal commercial diploma and academic baccalaureate (BM1)",
+      "Strong foundation in financial accounting, business processes, contracts and law",
+      "Earned Swiss Federal VET Diploma (EFZ) alongside the academic baccalaureate (BM)",
     ],
     type: "education",
   },

@@ -59,7 +59,7 @@ export function Footer() {
             </p>
             <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
               Or you want to collaborate on an interesting project, feel free to
-              reach out. I am always open to new opportunities and challenges...
+              reach out. I am always open to new opportunities and challenges.
               Let's connect!
             </p>
 
