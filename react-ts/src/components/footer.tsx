@@ -82,7 +82,12 @@ export function Footer() {
                 className="gap-2 rounded-xl border border-neutral-200 bg-white/90 px-6 py-6 text-sm font-semibold text-neutral-800 shadow-2xs transition-all hover:border-neutral-900 hover:bg-neutral-50 hover:text-black"
                 asChild
               >
-                <a href="/cv.pdf" download="Andres_Jauch_CV.pdf">
+                <a
+                  href="/Andres_Jauch_CV.pdf"
+                  download="Andres_Jauch_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FileDown className="h-4 w-4" />
                   <span>Download CV (PDF)</span>
                 </a>
