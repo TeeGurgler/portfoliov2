@@ -32,7 +32,14 @@ export const PROJECTS: Project[] = [
     title: "Brain Health Predictive Modeling",
     description:
       "Collaborative biomedical machine learning challenge analyzing neurological health metrics. Implemented and validated Random Forest classification pipelines to predict clinical outcomes from health indicator datasets.",
-    tags: ["Machine Learning", "Random Forest", "Random Survival Forest", "Python", "Jupyter", "Scikit-Learn"],
+    tags: [
+      "Machine Learning",
+      "Random Forest",
+      "Random Survival Forest",
+      "Python",
+      "Jupyter",
+      "Scikit-Learn",
+    ],
     githubUrl: "https://github.com/TeeGurgler/brain-health-challenge",
     featured: true,
   },
@@ -48,7 +55,7 @@ export const PROJECTS: Project[] = [
       "SciPy",
       "Pandas",
     ],
-    githubUrl: "https://github.com/TeeGurgler/omc-rhine-swimability",
+    githubUrl: "https://github.com/TeeGurgler/wer-mc",
     featured: true,
   },
   {
@@ -61,7 +68,6 @@ export const PROJECTS: Project[] = [
       "Stereo Camera",
       "ZED SDK",
       "Streamlit",
-
     ],
     githubUrl: "https://github.com/TeeGurgler/CDA2-3Da",
     featured: true,
