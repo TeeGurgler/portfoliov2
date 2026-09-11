@@ -32,7 +32,7 @@ export function Footer() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="mx-auto max-w-4xl transform-gpu will-change-[transform,opacity]"
       >
-        <Card className="group relative overflow-hidden rounded-3xl border border-neutral-200/80 bg-white/70 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-xl hover:shadow-neutral-900/5 md:p-14 transform-gpu">
+        <Card className="group relative overflow-hidden rounded-3xl border border-neutral-200/80 bg-white/70 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-xl hover:shadow-neutral-900/5 md:p-14 isolate transform-gpu">
           {/* Subtle monochromatic top glow */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-neutral-900 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           <div className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-br from-neutral-900/[0.04] via-transparent to-neutral-400/[0.03] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

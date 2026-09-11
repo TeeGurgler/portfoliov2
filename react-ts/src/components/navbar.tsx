@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Home, Hammer, Cpu, History, Mail } from "lucide-react";
 
@@ -29,10 +29,15 @@ function GitHubIcon({ className }: { className?: string }) {
 export function Navbar() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
+  const isVisibleRef = useRef(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Show navbar when scrolled past 120px, hide when at the top
-    setVisible(latest > 120);
+    // Only update state when threshold boundary is crossed
+    const shouldShow = latest > 120;
+    if (isVisibleRef.current !== shouldShow) {
+      isVisibleRef.current = shouldShow;
+      setVisible(shouldShow);
+    }
   });
 
   return (
@@ -43,7 +48,7 @@ export function Navbar() {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: -60, opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 rounded-full border border-black/10 dark:border-white/10 bg-background/85 px-3 py-1.5 backdrop-blur-sm shadow-md transform-gpu will-change-[transform,opacity]"
+          className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 rounded-full border border-black/10 dark:border-white/10 bg-background/85 px-3 py-1.5 backdrop-blur-sm shadow-md isolate transform-gpu will-change-[transform,opacity]"
         >
           {/* Home button on left side */}
           <a

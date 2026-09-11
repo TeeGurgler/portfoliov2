@@ -44,7 +44,7 @@ export function Timeline() {
         <div className="relative">
           {/* Animated Center / Left Line */}
           <motion.div
-            className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neutral-900 via-neutral-400 to-neutral-200 md:left-1/2 md:-translate-x-1/2"
+            className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neutral-900 via-neutral-400 to-neutral-200 md:left-1/2 md:-translate-x-1/2 transform-gpu will-change-transform"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
@@ -69,14 +69,14 @@ export function Timeline() {
                     duration: 0.5,
                     ease: "easeOut",
                   }}
-                  className={`relative flex items-center ${
+                  className={`relative flex items-center transform-gpu will-change-[transform,opacity] ${
                     isEven ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
                   {/* Icon Node in center line */}
                   <div className="absolute left-4 flex h-8 w-8 items-center justify-center md:left-1/2 md:-translate-x-1/2">
                     <motion.div
-                      className="flex h-9 w-9 items-center justify-center rounded-full border-4 border-white bg-neutral-900 shadow-md"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border-4 border-white bg-neutral-900 shadow-md transform-gpu will-change-transform"
                       initial={{ scale: 0 }}
                       animate={isInView ? { scale: 1 } : { scale: 0 }}
                       transition={{ delay: index * 0.2 + 0.2, type: "spring" }}
@@ -84,8 +84,8 @@ export function Timeline() {
                       <Icon className="h-4 w-4 text-white" />
                     </motion.div>
                     <motion.div
-                      className="absolute h-9 w-9 rounded-full bg-neutral-950/10"
-                      animate={{ scale: [1, 1.4, 1] }}
+                      className="absolute h-9 w-9 rounded-full bg-neutral-950/10 transform-gpu will-change-transform"
+                      animate={isInView ? { scale: [1, 1.4, 1] } : { scale: 1 }}
                       transition={{
                         duration: 2.5,
                         repeat: Infinity,
@@ -105,7 +105,7 @@ export function Timeline() {
                       transition={{ duration: 0.2 }}
                       className="transform-gpu will-change-[transform]"
                     >
-                      <Card className="group relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-lg hover:shadow-neutral-900/5 md:p-7 transform-gpu">
+                      <Card className="group relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-400 hover:bg-white/90 hover:shadow-lg hover:shadow-neutral-900/5 md:p-7 isolate transform-gpu">
                         <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-neutral-900 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                         <div className="relative z-10 space-y-3">
