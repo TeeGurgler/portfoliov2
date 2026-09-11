@@ -83,7 +83,7 @@ export function Footer() {
                 asChild
               >
                 <a
-                  href="/Andres_Jauch_CV.pdf"
+                  href="/cv.pdf"
                   download="Andres_Jauch_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
