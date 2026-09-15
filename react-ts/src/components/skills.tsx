@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { SKILL_CATEGORIES } from "@/data/portfolio";
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
+  "Data Science": <BrainCircuit className="h-4 w-4 text-white" />,
   "Data Science & Vision": <BrainCircuit className="h-4 w-4 text-white" />,
   "Web & Architecture": <Layout className="h-4 w-4 text-white" />,
   "Tools & Infrastructure": <Boxes className="h-4 w-4 text-white" />,

@@ -54,13 +54,9 @@ export function Footer() {
 
             {/* Subtitle */}
             <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
-              Whether you need computer vision pipelines, full-stack
-              architectures, automated data workflows, data analysis...
-            </p>
-            <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
-              Or you want to collaborate on an interesting project, feel free to
-              reach out. I am always open to new opportunities and challenges.
-              Let's connect!
+              Interested in working together or discussing a project?
+              <br />
+              Reach out directly by email or explore my work on GitHub.
             </p>
 
             {/* Action Buttons */}

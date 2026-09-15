@@ -81,12 +81,12 @@ export const PROJECTS: Project[] = [
     featured: false,
   },
   {
-    title: "Demographic Data Analysis",
+    title: "Power Grid Signal Analysis & Reconstruction",
     description:
-      "Statistical modeling and demographic projection framework analyzing regional population shifts, economic factors, and generational trends using statistics.",
-    tags: ["R", "Statistical Modeling", "Data Visualization", "ggplot2"],
-    githubUrl: "https://github.com/TeeGurgler/CDE1-Demografie",
-    featured: false,
+      "Signal processing pipeline analyzing Swiss national electricity consumption: evaluating peak demand aliasing via the Nyquist theorem, periodicity via correlation, and peak recovery using deconvolution.",
+    tags: ["Python", "Signal Processing", "SciPy", "NumPy", "Time Series"],
+    githubUrl: "https://github.com/TeeGurgler/gbsv-MC1",
+    featured: true,
   },
   {
     title: "My Portfolio",
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    category: "★ Data Science",
+    category: "Data Science",
     description:
       "Machine learning, statistical computing, and spatial computer vision.",
     skills: [

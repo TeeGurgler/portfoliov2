@@ -48,12 +48,12 @@ export function Navbar() {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: -60, opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 rounded-full border border-black/10 dark:border-white/10 bg-background/85 px-3 py-1.5 backdrop-blur-sm shadow-md isolate transform-gpu will-change-[transform,opacity]"
+          className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex max-w-[95vw] items-center gap-0.5 sm:gap-1 rounded-full border border-black/10 dark:border-white/10 bg-background/85 px-2 sm:px-3 py-1.5 backdrop-blur-sm shadow-md isolate transform-gpu will-change-[transform,opacity]"
         >
           {/* Home button on left side */}
           <a
             href="#"
-            className="flex items-center gap-1.5 rounded-full p-1.5 px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="flex items-center gap-1.5 rounded-full p-1.5 px-2 sm:px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             aria-label="Home"
           >
             <Home className="h-3.5 w-3.5" />
@@ -61,17 +61,17 @@ export function Navbar() {
           </a>
 
           {/* Left separator line */}
-          <div className="h-4 w-[1px] bg-border mx-1" />
+          <div className="h-4 w-[1px] bg-border mx-0.5 sm:mx-1" />
 
           {/* Main navigation items */}
-          <nav className="flex items-center gap-1">
+          <nav className="flex items-center gap-0.5 sm:gap-1">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="flex items-center gap-1 sm:gap-1.5 rounded-full px-2 sm:px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   <Icon className="h-3.5 w-3.5" />
                   <span>{item.label}</span>

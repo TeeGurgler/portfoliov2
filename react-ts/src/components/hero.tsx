@@ -77,9 +77,8 @@ export function Hero() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-muted-foreground md:text-2xl transform-gpu will-change-[transform,opacity]"
           >
-            I focus on database architectures, modern web development, data
-            analysis, and process automation. Delivering scalable,
-            high-performance solutions.
+            BSc Data Science student at FHNW specializing in machine learning,
+            3D computer vision, statistical modeling, and modern web architectures.
           </motion.p>
 
           <motion.div

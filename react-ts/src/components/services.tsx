@@ -3,20 +3,36 @@ import {
   FolderGit2,
   ExternalLink,
   Hammer,
-  Activity,
+  BrainCircuit,
+  Waves,
+  Crosshair,
   Ship,
+  Zap,
   Code2,
-  BarChart3,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { PROJECTS } from "@/data/portfolio";
 
 const PROJECT_ICONS: Record<string, React.ReactNode> = {
-  "Tennis 3D Tracking & Analysis": <Activity className="h-5 w-5 text-white" />,
-  "Container Route Tracking": <Ship className="h-5 w-5 text-white" />,
-  "My Portfolio": <Code2 className="h-5 w-5 text-white" />,
-  "Demographic Data Analysis": <BarChart3 className="h-5 w-5 text-white" />,
+  "Brain Health Predictive Modeling": (
+    <BrainCircuit className="h-5 w-5 text-white" />
+  ),
+  "Rhine Swimability Monte Carlo Simulation": (
+    <Waves className="h-5 w-5 text-white" />
+  ),
+  "Tennis 3D Tracking & Analysis": (
+    <Crosshair className="h-5 w-5 text-white" />
+  ),
+  "Container Route Tracking": (
+    <Ship className="h-5 w-5 text-white" />
+  ),
+  "Power Grid Signal Analysis & Reconstruction": (
+    <Zap className="h-5 w-5 text-white" />
+  ),
+  "My Portfolio": (
+    <Code2 className="h-5 w-5 text-white" />
+  ),
 };
 
 export function Services() {
